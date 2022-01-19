@@ -1,0 +1,15 @@
+.keypad-main {
+  background-color: blue;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.keypad-numbers {
+}
+
+.keypad-operators {
+  display: flex;
+  flex-direction: column;
+}
