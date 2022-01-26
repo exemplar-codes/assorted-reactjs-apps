@@ -1,7 +1,11 @@
 import React from "react";
 
+import "./ReactHooksCheck.css";
+
+import HookUseState from "./Hooks/useStateHook";
+
 const ReactHooksCheck = () => {
-  return <div></div>;
+  return <HookUseState />;
 };
 
 export default ReactHooksCheck;
