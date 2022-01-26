@@ -2,6 +2,11 @@ import React, { useState } from "react";
 
 const HookUseState = () => {
   /*
+  why: to re-render components automatically when their data changes.
+
+  how: uses eventListeners on values and triggers drawer function.
+
+  what:
   - useState provides with a read variable
   - this is like C langs static of method, so it's saved between
     the component instances function calls
@@ -20,6 +25,7 @@ const HookUseState = () => {
   const [count, setCount] = useState(0);
 
   const onClickHandler = () => setCount(count + 1);
+  // what's this
   // add by 1 when clicked
   // this will re-render the button too, as we are 'setting' state.
 
