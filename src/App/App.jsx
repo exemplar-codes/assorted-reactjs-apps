@@ -1,10 +1,9 @@
 import React from 'react';
 
-// import Calculator from "../Apps/Calculator/Calculator";
-import HelloWorld from "../Apps/HelloWorld/HelloWorld";
+import ReactHooksCheck from '../Apps/ReactHooksCheck/ReactHooksCheck';
 
 function App() {
-  return <HelloWorld />;
+  return <ReactHooksCheck />;
 }
 
 export default App;
