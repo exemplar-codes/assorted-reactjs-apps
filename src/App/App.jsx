@@ -1,9 +1,9 @@
 import React from "react";
 
-import MultiStateMulti from "../Apps/MultipleStates/MultiStateMulti";
+import MultiStateSingle from "../Apps/MultipleStates/MultiStateSingle";
 
 function App() {
-  return <MultiStateMulti />;
+  return <MultiStateSingle />;
 }
 
 export default App;
