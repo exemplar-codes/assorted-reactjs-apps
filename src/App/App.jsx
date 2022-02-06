@@ -1,9 +1,9 @@
 import React from "react";
 
-import TimerUsingHook from "../Apps/TimerUsingHook/TimerUsingHook";
+import MultiStateMulti from "../Apps/MultipleStates/MultiStateMulti";
 
 function App() {
-  return <TimerUsingHook />;
+  return <MultiStateMulti />;
 }
 
 export default App;
