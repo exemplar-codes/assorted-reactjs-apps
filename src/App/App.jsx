@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import ReactHooksCheck from '../Apps/ReactHooksCheck/ReactHooksCheck';
+import TimerUsingHook from "../Apps/TimerUsingHook/TimerUsingHook";
 
 function App() {
-  return <ReactHooksCheck />;
+  return <TimerUsingHook />;
 }
 
 export default App;
