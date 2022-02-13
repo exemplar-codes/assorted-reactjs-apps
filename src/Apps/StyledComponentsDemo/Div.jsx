@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
 `;
 
 function Div(props) {
-  <StyledDiv>{props.children}</StyledDiv>;
+  return <StyledDiv>{props.children}</StyledDiv>;
 }
 
 export default Div;

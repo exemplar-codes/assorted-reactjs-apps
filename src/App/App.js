@@ -1,8 +1,9 @@
 import React from "react";
-import Parent2ChildComm from "../Apps/Parent2ChildComm/Parent2ChildComm";
+
+import StyledComponentsDemo from "../Apps/StyledComponentsDemo/StyledComponentsDemo";
 
 function App() {
-  return <Parent2ChildComm />;
+  return <StyledComponentsDemo />;
 }
 
 export default App;
