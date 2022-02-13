@@ -1,9 +1,8 @@
 import React from "react";
-
-import MultiStateSingle from "../Apps/MultipleStates/MultiStateSingle";
+import Parent2ChildComm from "../Apps/Parent2ChildComm/Parent2ChildComm";
 
 function App() {
-  return <MultiStateSingle />;
+  return <Parent2ChildComm />;
 }
 
 export default App;
