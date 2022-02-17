@@ -1,9 +1,9 @@
 import React from "react";
 
-import StyledComponentsDemo from "../Apps/StyledComponentsDemo/StyledComponentsDemo";
+import OddEvenInput from "../Apps/OddEvenInput/OddEventInput";
 
 function App() {
-  return <StyledComponentsDemo />;
+  return <OddEvenInput />;
 }
 
 export default App;
