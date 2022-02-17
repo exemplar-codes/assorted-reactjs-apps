@@ -43,7 +43,7 @@ function OddEvenInput() {
               </span>
             ))}
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit/Press Enter" />
       </form>
     </div>
   );
