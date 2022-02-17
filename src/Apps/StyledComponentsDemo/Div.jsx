@@ -4,18 +4,19 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   // for the current tag only
-  color: red;
+  // color: red;
   font-size: 64px;
 
-  // &:hover - pseudo classes
+  // &:hover - pseudoclasses
 
   div {
     // for tags inside
     color: blue;
+    font-size: 24px;
   }
 `;
 
-function Div(props) {
+function Div(props) { 
   return <StyledDiv>{props.children}</StyledDiv>;
 }
 

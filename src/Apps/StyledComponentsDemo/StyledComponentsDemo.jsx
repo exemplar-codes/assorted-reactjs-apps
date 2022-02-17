@@ -4,7 +4,11 @@ import Div from "./Div";
 function StyledComponentsDemo() {
   return (
     <Div>
-      Hi, I am Sanjar23<Div>23 <div>23</div></Div>
+      OuterMost
+      <Div>
+        Outer
+        <Div>Inner</Div>
+      </Div>
     </Div>
   );
 }
