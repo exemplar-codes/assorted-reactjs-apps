@@ -34,6 +34,7 @@ function OddEvenInput() {
           onChange={setEnteredInputHandler}
         />
         <div></div>
+        &nbsp;
         <div class="inputs-output">
           {toNonNegativeString(enteredInput)
             .split("")
