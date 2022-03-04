@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import "./UseRefMain.css";
 
@@ -21,55 +21,46 @@ import "./UseRefMain.css";
 //   return [accessor, mutator];
 // }
 
-function UseRefDemo3() {
-  const [showDisplay, setShowDisplay] = useState(false);
+function UseRefDemo3State() {
   const [enteredName, setEnteredName] = useState("");
 
-  // const [accessor, mutator] = useRefHook("#name-why");
+  const nameRef = useRef();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    // if (accessor().value.length) {
-    //   setEnteredName(accessor().value);
-
-    //   toggleDisplay(); // show display
-
-    //   mutator("value", "");
-    //   // setEnteredName(""); // reset input field
-    // }
-    console.log("Clicked");
-  };
-
-  const toggleDisplay = () => {
-    setShowDisplay((prevDisplay) => !prevDisplay);
+    if (nameRef.current.value.length) {
+      setEnteredName(nameRef.current.value); // flips the display ON and displays name
+      nameRef.current.value = ""; // empty the input
+    }
   };
 
   const resetHandler = () => {
-    toggleDisplay();
-    // mutator("value", "");
+    setEnteredName(""); // flip the display OFF
+
+    nameRef.current.value = ""; // clear the input
   };
 
   return (
     <div className="use-ref-demo">
       <h1>Demo</h1>
-      {/* <form onSubmit={onSubmitHandler} autoComplete="off">
+      <form onSubmit={onSubmitHandler} autoComplete="off">
         <label htmlFor="name-why">Enter name</label> <br />
         <br />
-        <input type="text" id="name-why" />
+        <input type="text" id="name-why" ref={nameRef} />
         <br />
         <br />
         <button type="submit">Submit</button>
       </form>
-      {showDisplay && (
+      {Boolean(enteredName) && (
         <>
           <br />
           <br />
           <div>Entered Name: {enteredName}</div>
           <button onClick={resetHandler}>Reset</button>
         </>
-      )} */}
+      )}
     </div>
   );
 }
 
-export default UseRefDemo3;
+export default UseRefDemo3State;
