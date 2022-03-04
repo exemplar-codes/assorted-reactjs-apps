@@ -8,12 +8,12 @@ function UseRefNeed1() {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    if (document.getElementById("name-demo").value.length) {
-      setEnteredName(document.getElementById("name-demo").value);
+    if (document.getElementById("name-need").value.length) {
+      setEnteredName(document.getElementById("name-need").value);
 
       toggleDisplay(); // show display
 
-      document.getElementById("name-demo").value = "";
+      document.getElementById("name-need").value = "";
       // setEnteredName(""); // reset input field
     }
     console.log("Clicked");
@@ -25,16 +25,16 @@ function UseRefNeed1() {
 
   const resetHandler = () => {
     toggleDisplay();
-    document.getElementById("name-demo").value = "";
+    document.getElementById("name-need").value = "";
   };
 
   return (
     <div className="use-ref-demo">
       <h1>Need</h1>
       <form onSubmit={onSubmitHandler} autoComplete="off">
-        <label htmlFor="name-demo">Enter name</label> <br />
+        <label htmlFor="name-need">Enter name</label> <br />
         <br />
-        <input type="text" id="name-demo" />
+        <input type="text" id="name-need" />
         <br />
         <br />
         <button type="submit">Submit</button>
