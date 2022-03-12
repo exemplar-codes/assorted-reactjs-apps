@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import UseRefMain from "./Apps/UseRefDemo/UseRefMain";
+import UseReducerDemo from "./Apps/UseReducerDemo/UseReducerDemo";
 
 ReactDOM.render(
   <React.StrictMode>
-    <UseRefMain />
+    <UseReducerDemo />
   </React.StrictMode>,
   document.getElementById("root")
 );
