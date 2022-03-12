@@ -1,3 +1,4 @@
+import { act } from "@testing-library/react";
 import React, { useReducer } from "react";
 
 function reducerFunc(state, action) {
@@ -7,7 +8,7 @@ function reducerFunc(state, action) {
     case "DECREMENT":
       return { count: state.count - action.delta };
     default:
-      return state;
+      throw new Error(`Unknown dispatch type: ${action.type}`);
   }
 }
 
