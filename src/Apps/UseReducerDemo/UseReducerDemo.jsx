@@ -1,4 +1,3 @@
-import { act } from "@testing-library/react";
 import React, { useReducer } from "react";
 
 function reducerFunc(state, action) {
