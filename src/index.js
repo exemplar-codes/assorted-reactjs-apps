@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import UseReducerDemo from "./Apps/UseReducerDemo/UseReducerDemo";
+import AddButtonPillMain from "./Apps/AddButtonPill/AddButtonPillMain";
 
 ReactDOM.render(
   <React.StrictMode>
-    <UseReducerDemo />
+    <AddButtonPillMain />
   </React.StrictMode>,
   document.getElementById("root")
 );
