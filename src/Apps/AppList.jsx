@@ -16,36 +16,76 @@ import UseReducerDemo from "./UseReducerDemo/UseReducerDemo";
 import AddButtonPill from "./AddButtonPill/AddButtonPillMain";
 import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
 
-const Apps = [
-  { name: "HelloWorld", Component: HelloWorld },
-  { name: "Calculator", Component: Calculator },
-  // { name: "ReactHooksCheck", Component: ReactHooksCheck },
-  { name: "TimerUsingHook", Component: TimerUsingHook },
-  { name: "MultiStateSingle", Component: MultiStateSingle },
-  { name: "MultiStateMulti", Component: MultiStateMulti },
-  { name: "Parent2ChildComm", Component: Parent2ChildComm },
-  { name: "ReactClock", Component: ReactClock },
-  { name: "StyledComponentsDemo", Component: StyledComponentsDemo },
-  // { name: "OddEvenInput", Component: OddEvenInput },
-  { name: "PortalOut", Component: PortalOut },
-  { name: "UseRefMain", Component: UseRefMain },
-  { name: "UseReducerDemo", Component: UseReducerDemo },
-  { name: "AddButtonPill", Component: AddButtonPill },
-  { name: "ForwardRefDemoRoot", Component: ForwardRefDemoRoot },
-];
+const Apps = {
+  HelloWorld: HelloWorld,
+  Calculator: Calculator,
+  // ReactHooksCheck: ReactHooksCheck,
+  TimerUsingHook: TimerUsingHook,
+  MultiStateSingle: MultiStateSingle,
+  MultiStateMulti: MultiStateMulti,
+  Parent2ChildComm: Parent2ChildComm,
+  ReactClock: ReactClock,
+  StyledComponentsDemo: StyledComponentsDemo,
+  // OddEvenInput: OddEvenInput,
+  PortalOut: PortalOut,
+  UseRefMain: UseRefMain,
+  UseReducerDemo: UseReducerDemo,
+  AddButtonPill: AddButtonPill,
+  ForwardRefDemoRoot: ForwardRefDemoRoot,
+};
+
+function navigateTo(pathname) {
+  window.history.pushState({}, pathname, window.location.origin + pathname);
+  return false;
+}
 
 function AppList() {
+  const showList = window.location.pathname === "/";
   return (
     <>
-      <h1>List of React apps</h1>
-      <ol>
-        {Apps.map((App) => (
-          <li>
-            {App.name}: <App.Component />
-          </li>
-        ))}
-      </ol>
+      <h1>Assorted React Apps</h1>
+      {/* render the list or render the view */}
+      {showList ? (
+        <List />
+      ) : (
+        <ViewApp route={`${window.location.pathname.replace("/", "")}`} />
+      )}
     </>
+  );
+}
+
+function ViewApp({ route }) {
+  const App = Apps[route];
+  return (
+    <>
+      <h2>{route}</h2>
+      {
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <a href="" onClick={() => navigateTo("/")}>
+          Back to List
+        </a>
+      }
+      <br />
+      <hr />
+      <App />
+    </>
+  );
+}
+
+function List() {
+  return (
+    <ol>
+      {Object.keys(Apps).map((AppName) => (
+        <li key={AppName} style={{ padding: "5px" }}>
+          {
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <a onClick={() => navigateTo(`/${AppName}`)} href="">
+              {AppName}
+            </a>
+          }
+        </li>
+      ))}
+    </ol>
   );
 }
 
