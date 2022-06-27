@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HelloWorld from "./HelloWorld/HelloWorld";
 import Calculator from "./Calculator/Calculator";
@@ -36,32 +36,41 @@ const Apps = {
 
 function navigateTo(pathname) {
   window.history.pushState({}, pathname, window.location.origin + pathname);
-  return false;
 }
 
 function AppList() {
-  const showList = window.location.pathname === "/";
+  // const showList = window.location.pathname === "/";
+
+  const [place, setPlace] = useState("/");
+  const showList = place === "/" || place === "/assorted-reactjs-apps";
+
   return (
     <>
       <h1>Assorted React Apps</h1>
       {/* render the list or render the view */}
       {showList ? (
-        <List />
+        <List setPlace={setPlace} />
       ) : (
-        <ViewApp route={`${window.location.pathname.replace("/", "")}`} />
+        <ViewApp setPlace={setPlace} route={`${place.replace("/", "")}`} />
       )}
     </>
   );
 }
 
-function ViewApp({ route }) {
+function ViewApp({ route, setPlace }) {
   const App = Apps[route];
   return (
     <>
       <h2>{route}</h2>
       {
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="" onClick={() => navigateTo("/")}>
+        <a
+          href="#"
+          onClick={() => {
+            navigateTo("/");
+            setPlace("/");
+          }}
+        >
           Back to List
         </a>
       }
@@ -72,14 +81,20 @@ function ViewApp({ route }) {
   );
 }
 
-function List() {
+function List({ setPlace }) {
   return (
     <ol>
       {Object.keys(Apps).map((AppName) => (
         <li key={AppName} style={{ padding: "5px" }}>
           {
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <a onClick={() => navigateTo(`/${AppName}`)} href="">
+            <a
+              onClick={() => {
+                navigateTo(`/${AppName}`);
+                setPlace(`/${AppName}`);
+              }}
+              href="#"
+            >
               {AppName}
             </a>
           }
