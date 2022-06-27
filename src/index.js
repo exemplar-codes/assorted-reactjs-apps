@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ForwardRefDemoRoot from "./Apps/ForwardRefDemo/ForwardRefDemoRoot";
+
+import AppList from "./Apps/AppList";
+import CurrentApp from "./Apps/CurrentApp";
+
+const live = window.location.hostname == !"localhost";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ForwardRefDemoRoot />
-  </React.StrictMode>,
+  <React.StrictMode>{!live ? <CurrentApp /> : <AppList />}</React.StrictMode>,
   document.getElementById("root")
 );
