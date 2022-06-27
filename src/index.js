@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import AddButtonPillMain from "./Apps/AddButtonPill/AddButtonPillMain";
+import ForwardRefDemoRoot from "./Apps/ForwardRefDemo/ForwardRefDemoRoot";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AddButtonPillMain />
+    <ForwardRefDemoRoot />
   </React.StrictMode>,
   document.getElementById("root")
 );
