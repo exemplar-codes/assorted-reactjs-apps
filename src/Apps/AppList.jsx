@@ -17,21 +17,21 @@ import AddButtonPill from "./AddButtonPill/AddButtonPillMain";
 import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
 
 const Apps = [
-  HelloWorld,
-  Calculator,
-  // ReactHooksCheck,
-  TimerUsingHook,
-  MultiStateSingle,
-  MultiStateMulti,
-  Parent2ChildComm,
-  ReactClock,
-  StyledComponentsDemo,
-  // OddEvenInput,
-  PortalOut,
-  UseRefMain,
-  UseReducerDemo,
-  AddButtonPill,
-  ForwardRefDemoRoot,
+  { name: "HelloWorld", Component: HelloWorld },
+  { name: "Calculator", Component: Calculator },
+  // { name: "ReactHooksCheck", Component: ReactHooksCheck },
+  { name: "TimerUsingHook", Component: TimerUsingHook },
+  { name: "MultiStateSingle", Component: MultiStateSingle },
+  { name: "MultiStateMulti", Component: MultiStateMulti },
+  { name: "Parent2ChildComm", Component: Parent2ChildComm },
+  { name: "ReactClock", Component: ReactClock },
+  { name: "StyledComponentsDemo", Component: StyledComponentsDemo },
+  // { name: "OddEvenInput", Component: OddEvenInput },
+  { name: "PortalOut", Component: PortalOut },
+  { name: "UseRefMain", Component: UseRefMain },
+  { name: "UseReducerDemo", Component: UseReducerDemo },
+  { name: "AddButtonPill", Component: AddButtonPill },
+  { name: "ForwardRefDemoRoot", Component: ForwardRefDemoRoot },
 ];
 
 function AppList() {
@@ -41,7 +41,7 @@ function AppList() {
       <ol>
         {Apps.map((App) => (
           <li>
-            {App.name}: <App />
+            {App.name}: <App.Component />
           </li>
         ))}
       </ol>
