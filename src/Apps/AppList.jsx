@@ -16,23 +16,23 @@ import UseReducerDemo from "./UseReducerDemo/UseReducerDemo";
 import AddButtonPill from "./AddButtonPill/AddButtonPillMain";
 import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
 
-const Apps = {
-  HelloWorld: HelloWorld,
-  Calculator: Calculator,
-  // ReactHooksCheck: ReactHooksCheck,
-  TimerUsingHook: TimerUsingHook,
-  MultiStateSingle: MultiStateSingle,
-  MultiStateMulti: MultiStateMulti,
-  Parent2ChildComm: Parent2ChildComm,
-  ReactClock: ReactClock,
-  StyledComponentsDemo: StyledComponentsDemo,
-  // OddEvenInput: OddEvenInput,
-  PortalOut: PortalOut,
-  UseRefMain: UseRefMain,
-  UseReducerDemo: UseReducerDemo,
-  AddButtonPill: AddButtonPill,
-  ForwardRefDemoRoot: ForwardRefDemoRoot,
-};
+const Apps = [
+  { componentName: "HelloWorld", Component: HelloWorld },
+  { componentName: "Calculator", Component: Calculator },
+  // { componentName: "ReactHooksCheck", Component: ReactHooksCheck },
+  { componentName: "TimerUsingHook", Component: TimerUsingHook },
+  { componentName: "MultiStateSingle", Component: MultiStateSingle },
+  { componentName: "MultiStateMulti", Component: MultiStateMulti },
+  { componentName: "Parent2ChildComm", Component: Parent2ChildComm },
+  { componentName: "ReactClock", Component: ReactClock },
+  { componentName: "StyledComponentsDemo", Component: StyledComponentsDemo },
+  // { componentName: "OddEvenInput", Component: OddEvenInput },
+  { componentName: "PortalOut", Component: PortalOut },
+  { componentName: "UseRefMain", Component: UseRefMain },
+  { componentName: "UseReducerDemo", Component: UseReducerDemo },
+  { componentName: "AddButtonPill", Component: AddButtonPill },
+  { componentName: "ForwardRefDemoRoot", Component: ForwardRefDemoRoot },
+];
 
 function navigateTo(pathname) {
   window.history.pushState({}, pathname, window.location.origin + pathname);
@@ -58,7 +58,10 @@ function AppList() {
 }
 
 function ViewApp({ route, setPlace }) {
-  const App = Apps[route];
+  const App = Apps.find(
+    ({ componentName }) => componentName === route
+  ).Component;
+
   return (
     <>
       <h2>{route}</h2>
@@ -84,7 +87,7 @@ function ViewApp({ route, setPlace }) {
 function List({ setPlace }) {
   return (
     <ol>
-      {Object.keys(Apps).map((AppName) => (
+      {Apps.map(({ componentName: AppName }) => (
         <li key={AppName} style={{ padding: "5px" }}>
           {
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
