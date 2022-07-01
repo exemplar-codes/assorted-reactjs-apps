@@ -1,8 +1,8 @@
 import React from "react";
-import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
+import DescendantReRender from "./DescendantReRender/DescendantReRender";
 
 function CurrentApp() {
-  return <ForwardRefDemoRoot />;
+  return <DescendantReRender />;
 }
 
 export default CurrentApp;
