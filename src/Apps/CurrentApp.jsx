@@ -1,8 +1,8 @@
 import React from "react";
-import DescendantReRender from "./DescendantReRender/DescendantReRender";
+import ComponentUpdatesInAction from "./ComponentUpdatesInAction/ComponentUpdatesInAction";
 
 function CurrentApp() {
-  return <DescendantReRender />;
+  return <ComponentUpdatesInAction />;
 }
 
 export default CurrentApp;

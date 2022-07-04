@@ -16,6 +16,7 @@ import UseReducerDemo from "./UseReducerDemo/UseReducerDemo";
 import AddButtonPill from "./AddButtonPill/AddButtonPillMain";
 import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
 import DescendantReRender from "./DescendantReRender/DescendantReRender";
+import ComponentUpdatesInAction from "./ComponentUpdatesInAction/ComponentUpdatesInAction";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -34,6 +35,7 @@ const Apps = [
   { componentName: "AddButtonPill", Component: AddButtonPill },
   { componentName: "ForwardRefDemoRoot", Component: ForwardRefDemoRoot },
   { componentName: "DescendantReRender", Component: DescendantReRender },
+  { componentName: "ComponentUpdatesInAction", Component: ComponentUpdatesInAction },
   // Add new app here
 ];
 
