@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Parent from "./Parent";
 
-console.log(DescendantReRender.name + " file run");
+// console.log(DescendantReRender.name + " file run");
 
 function DescendantReRender() {
   console.log(DescendantReRender.name + " function run");

@@ -1,4 +1,4 @@
-console.log(Child.name + " file run");
+// console.log(Child.name + " file run");
 
 function Child({ count, setCount }) {
   console.log(Child.name + " funtion run");

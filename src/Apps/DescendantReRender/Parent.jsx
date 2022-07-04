@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Child from "./Child";
 
-console.log(Parent.name + " file run");
+// console.log(Parent.name + " file run");
 
 function Parent({ count, setCount }) {
   console.log(Parent.name + " function run");
