@@ -35,7 +35,10 @@ const Apps = [
   { componentName: "AddButtonPill", Component: AddButtonPill },
   { componentName: "ForwardRefDemoRoot", Component: ForwardRefDemoRoot },
   { componentName: "DescendantReRender", Component: DescendantReRender },
-  { componentName: "ComponentUpdatesInAction", Component: ComponentUpdatesInAction },
+  {
+    componentName: "ComponentUpdatesInAction",
+    Component: ComponentUpdatesInAction,
+  },
   // Add new app here
 ];
 
@@ -46,7 +49,7 @@ function navigateTo(pathname) {
 function AppList() {
   // const showList = window.location.pathname === "/";
 
-  const [place, setPlace] = useState("/");
+  const [place, setPlace] = useState(window.location.pathname);
   const showList = place === "/" || place === "/assorted-reactjs-apps";
 
   return (
@@ -64,12 +67,12 @@ function AppList() {
 
 function ViewApp({ route, setPlace }) {
   const App = Apps.find(
-    ({ componentName }) => componentName === route
-  ).Component;
+    (appEntry) => appEntry["componentName"] === route
+  )?.Component;
 
   return (
     <>
-      <h2>{route}</h2>
+      <h2>{App && route}</h2>
       {
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a
@@ -84,7 +87,7 @@ function ViewApp({ route, setPlace }) {
       }
       <br />
       <hr />
-      <App />
+      {App ? <App /> : "Invalid route"}
     </>
   );
 }
