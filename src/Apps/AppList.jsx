@@ -17,6 +17,7 @@ import AddButtonPill from "./AddButtonPill/AddButtonPillMain";
 import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
 import DescendantReRender from "./DescendantReRender/DescendantReRender";
 import ComponentUpdatesInAction from "./ComponentUpdatesInAction/ComponentUpdatesInAction";
+import ComponentStateBridge from "./ComponentStateBridge/ComponentStateBridge";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -38,6 +39,10 @@ const Apps = [
   {
     componentName: "ComponentUpdatesInAction",
     Component: ComponentUpdatesInAction,
+  },
+  {
+    componentName: "ComponentStateBridge",
+    Component: ComponentStateBridge,
   },
   // Add new app here
 ];

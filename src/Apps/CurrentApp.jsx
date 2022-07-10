@@ -1,8 +1,8 @@
 import React from "react";
-import ComponentUpdatesInAction from "./ComponentUpdatesInAction/ComponentUpdatesInAction";
+import ComponentStateBridge from "./ComponentStateBridge/ComponentStateBridge";
 
 function CurrentApp() {
-  return <ComponentUpdatesInAction />;
+  return <ComponentStateBridge />;
 }
 
 export default CurrentApp;
