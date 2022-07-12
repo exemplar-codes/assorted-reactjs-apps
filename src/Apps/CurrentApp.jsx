@@ -1,8 +1,8 @@
 import React from "react";
-import MixedStateBatching from "./MixedStateBatching/MixedStateBatching";
+import UITreeEvalOrder from "./UITreeEvalOrder/UITreeEvalOrderMain";
 
 function CurrentApp() {
-  return <MixedStateBatching />;
+  return <UITreeEvalOrder />;
 }
 
 export default CurrentApp;
