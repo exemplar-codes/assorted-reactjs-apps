@@ -12,11 +12,6 @@ function FlashPage(props) {
       }, (props.time * 1000) / 10);
     } else {
       setShowFlash(false);
-      return () => {
-        setShowFlash(true);
-        setWidthPercentage(0);
-        count++;
-      };
     }
   }, [widthPercentage]);
 
