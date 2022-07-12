@@ -1,8 +1,8 @@
 import React from "react";
-import ComponentStateBridge from "./ComponentStateBridge/ComponentStateBridge";
+import MixedStateBatching from "./MixedStateBatching/MixedStateBatching";
 
 function CurrentApp() {
-  return <ComponentStateBridge />;
+  return <MixedStateBatching />;
 }
 
 export default CurrentApp;
