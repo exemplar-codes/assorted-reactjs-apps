@@ -1,8 +1,8 @@
 import React from "react";
-import UITreeEvalOrder from "./UITreeEvalOrder/UITreeEvalOrderMain";
+import UseMemoDemo from "./UseMemoDemo/UseMemoDemo";
 
 function CurrentApp() {
-  return <UITreeEvalOrder />;
+  return <UseMemoDemo />;
 }
 
 export default CurrentApp;
