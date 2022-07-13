@@ -18,6 +18,10 @@ import ForwardRefDemoRoot from "./ForwardRefDemo/ForwardRefDemoRoot";
 import DescendantReRender from "./DescendantReRender/DescendantReRender";
 import ComponentUpdatesInAction from "./ComponentUpdatesInAction/ComponentUpdatesInAction";
 import ComponentStateBridge from "./ComponentStateBridge/ComponentStateBridge";
+import MixedStateBatching from "./MixedStateBatching/MixedStateBatching";
+import UITreeEvalOrder from "./UITreeEvalOrder/UITreeEvalOrderMain";
+import UseMemoDemo from "./UseMemoDemo/UseMemoDemo";
+import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -44,6 +48,19 @@ const Apps = [
     componentName: "ComponentStateBridge",
     Component: ComponentStateBridge,
   },
+  {
+    componentName: "MixedStateBatching",
+    Component: MixedStateBatching,
+  },
+  {
+    componentName: "UITreeEvalOrder",
+    Component: UITreeEvalOrder,
+  },
+  {
+    componentName: "UseMemoDemo",
+    Component: UseMemoDemo,
+  },
+  { componentName: "UseMemoWithChild", Component: UseMemoWithChild },
   // Add new app here
 ];
 
