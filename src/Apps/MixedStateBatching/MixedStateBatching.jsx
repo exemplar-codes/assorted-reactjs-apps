@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 function MixedStateBatching() {
+  // eslint-disable-next-line no-unused-vars
   const [count1, setCount1] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [count2, setCount2] = useState(0);
 
   console.log("Rendered");

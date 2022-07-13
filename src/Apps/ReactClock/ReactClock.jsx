@@ -8,13 +8,13 @@ class ReactClock extends React.Component {
   }
 
   UNSAFE_componentWillMount() {
-    this.state.msg = "Start";
+    this.setState({ msg: "Start" });
   }
   componentDidMount() {
-    this.state.msg = "Starting...";
+    this.setState({ msg: "Starting..." });
   }
   componentWillUnmount() {
-    this.state.msg = "Started";
+    this.setState({ msg: "Started" });
   }
   componentWillUpdate() {}
   componentDidUpdate() {}
