@@ -1,8 +1,8 @@
 import React from "react";
-import UseMemoDemo from "./UseMemoDemo/UseMemoDemo";
+import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
 
 function CurrentApp() {
-  return <UseMemoDemo />;
+  return <UseMemoWithChild />;
 }
 
 export default CurrentApp;
