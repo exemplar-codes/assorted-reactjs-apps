@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/assorted-reactjs-apps/static/css/main.a07c13eb.css",
-    "main.js": "/assorted-reactjs-apps/static/js/main.1c9123d6.js",
+    "main.js": "/assorted-reactjs-apps/static/js/main.852e253a.js",
     "static/media/uitree.svg": "/assorted-reactjs-apps/static/media/uitree.80447e15ce45b11ce9f433fccbd6b092.svg",
     "index.html": "/assorted-reactjs-apps/index.html",
     "main.a07c13eb.css.map": "/assorted-reactjs-apps/static/css/main.a07c13eb.css.map",
-    "main.1c9123d6.js.map": "/assorted-reactjs-apps/static/js/main.1c9123d6.js.map"
+    "main.852e253a.js.map": "/assorted-reactjs-apps/static/js/main.852e253a.js.map"
   },
   "entrypoints": [
     "static/css/main.a07c13eb.css",
-    "static/js/main.1c9123d6.js"
+    "static/js/main.852e253a.js"
   ]
 }
