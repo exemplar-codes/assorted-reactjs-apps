@@ -5,34 +5,30 @@ function HTTPRequestWithTimeLimit() {
   const [loading, setIsLoading] = useState(false);
   const [requestTimeLimitExceeded, setRequestTimeLimitExceeded] =
     useState(false);
-  const [requestSuccess, setRequestSuccess] = useState(false);
-  useState(false);
 
   function getProfile() {
     setIsLoading(true);
     setRequestTimeLimitExceeded(false);
-    setRequestSuccess(false);
-    setTimeout(() => {
-      setRequestSuccess((prevState) => {
-        if (!prevState) setRequestTimeLimitExceeded(true);
-        return prevState;
-      });
-      setIsLoading(false);
-    }, 3000);
-    fetch("https://api.github.com/users/sanjarcode")
-      .then((response) => response.json())
-      .then((data) => {
-        setTimeout(() => {
-          setRequestTimeLimitExceeded((prevState) => {
-            if (!prevState) {
-              setData(data);
-              setIsLoading(false);
-              setRequestSuccess(true);
-            }
-            return prevState;
-          });
-        }, 1000);
-      });
+
+    // Need to run both timer and fetch asynchronously. Stop if timer exceeds, or continue.
+    // Solution make a new promise, and call reject if timer exceeds
+    new Promise((resolve, reject) => {
+      fetch("https://api.github.com/users/sanjarcode")
+        .then((response) => response.json())
+        .then((data) => {
+          setTimeout(() => {
+            setData(data);
+            setIsLoading(false);
+            resolve(); // everything OK
+          }, 1000);
+        });
+
+      setTimeout(() => {
+        reject(new Error("Time Limit Exceeded"));
+      }, 300);
+    })
+      .catch(() => setRequestTimeLimitExceeded(true))
+      .finally(() => setIsLoading(false));
   }
 
   return (
@@ -40,7 +36,9 @@ function HTTPRequestWithTimeLimit() {
       <button onClick={getProfile}>Load Data</button>
       <p>{requestTimeLimitExceeded && "Time limit exceeded, try again"}</p>
       <p>{loading && "Loading...2 seconds left..."}</p>
-      <p>{!loading && data && requestSuccess && JSON.stringify(data)}</p>
+      <p>
+        {!loading && data && !requestTimeLimitExceeded && JSON.stringify(data)}
+      </p>
       {!loading && data && (
         <h2>
           Reason there's no need for useEffect - the HTTP request was triggered
