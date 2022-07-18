@@ -6,6 +6,8 @@ function HTTPRequestWithTimeLimit() {
   const [requestTimeLimitExceeded, setRequestTimeLimitExceeded] =
     useState(false);
 
+  const [causeTimeout, setCauseTimeout] = useState(true);
+
   function getProfile() {
     setIsLoading(true);
     setRequestTimeLimitExceeded(false);
@@ -18,19 +20,25 @@ function HTTPRequestWithTimeLimit() {
     // I'll clear both, if one of them has run, it would have already been cleared.
     let fetchTimer, limitTimer; // to keep track of the timers
     new Promise((resolve, reject) => {
-      fetchTimer = setTimeout(() => {
-        fetch("https://api.github.com/users/sanjarcode")
-          .then((response) => response.json())
-          .then((data) => {
-            setData(data);
-            setIsLoading(false);
-            resolve(); // everything OK
-          });
-      }, 1000);
+      fetchTimer = setTimeout(
+        () => {
+          fetch("https://api.github.com/users/sanjarcode")
+            .then((response) => response.json())
+            .then((data) => {
+              setData(data);
+              setIsLoading(false);
+              resolve(); // everything OK
+            });
+        },
+        causeTimeout ? 2000 : 500
+      );
 
-      limitTimer = setTimeout(() => {
-        reject(new Error("Time Limit Exceeded"));
-      }, 30);
+      limitTimer = setTimeout(
+        () => {
+          reject(new Error("Time Limit Exceeded"));
+        },
+        causeTimeout ? 1000 : 2000
+      );
     })
       .catch(() => setRequestTimeLimitExceeded(true))
       .finally(() => {
@@ -42,6 +50,10 @@ function HTTPRequestWithTimeLimit() {
 
   return (
     <>
+      <p>
+        {(causeTimeout ? "Cause" : "Avoid") + " time out"} &nbsp;
+        <button onClick={() => setCauseTimeout((prev) => !prev)}>Toogle</button>
+      </p>
       <button onClick={getProfile}>Load Data</button>
       <p>{requestTimeLimitExceeded && "Time limit exceeded, try again"}</p>
       <p>{loading && "Loading...2 seconds left..."}</p>
@@ -62,6 +74,9 @@ function HTTPRequestWithTimeLimit() {
           <a href="https://stackoverflow.com/a/53350139/11392807">
             Inspiration
           </a>
+          <br />
+          Of course, one can avoid this hassle by using the Axios HTTP library.
+          It takes in a max time limit.
         </h2>
       )}
     </>

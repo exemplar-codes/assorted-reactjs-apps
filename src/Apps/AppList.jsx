@@ -24,6 +24,7 @@ import UseMemoDemo from "./UseMemoDemo/UseMemoDemo";
 import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
 import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
 import HTTPRequestWithRef from "./HTTPRequestWithRef/HTTPRequestWithRef";
+import HTTPRequestWithTimeLimit from "./HTTPRequestWithTimeLimit/HTTPRequestWithTimeLimit";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -65,6 +66,10 @@ const Apps = [
   { componentName: "UseMemoWithChild", Component: UseMemoWithChild },
   { componentName: "HTTPRequestsMain", Component: HTTPRequestsMain },
   { componentName: "HTTPRequestWithRef", Component: HTTPRequestWithRef },
+  {
+    componentName: "HTTPRequestWithTimeLimit",
+    Component: HTTPRequestWithTimeLimit,
+  },
   // Add new app here
 ];
 
