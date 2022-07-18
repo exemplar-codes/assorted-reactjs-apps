@@ -61,28 +61,29 @@ function HTTPRequestWithTimeLimit() {
         {!loading && data && !requestTimeLimitExceeded && JSON.stringify(data)}
         <hr />
       </p>
-      {!loading && data && (
-        <h2>
-          Create a 'void' new promise and run both fetch and timer. Resolve
-          inside fetch, reject with an error inside timer. In the catch block of
-          this void promise, set timeLimitExceededState to true. And in the
-          finally block, clear the timer using window.clearTimeout (so it's not
-          run if fetch is successful)
-          <br />
-          Wrap this void promise in a function and call it inside useEffect or
-          as a user event callback.
-          <br />
-          <a href="https://stackoverflow.com/a/53350139/11392807">
-            Inspiration
-          </a>
-          <br />
-          Of course, one can avoid this hassle by using the Axios HTTP library.
-          It takes in a max time limit.
-          <a href="https://stackoverflow.com/a/62082804/11392807">See</a>
-        </h2>
-      )}
+      {!loading && data && <HelperText />}
     </>
   );
 }
 
+function HelperText() {
+  return (
+    <h2>
+      Create a 'void' new promise and run both fetch and timer. Resolve inside
+      fetch, reject with an error inside timer. In the catch block of this void
+      promise, set timeLimitExceededState to true. And in the finally block,
+      clear the timer using window.clearTimeout (so it's not run if fetch is
+      successful)
+      <br />
+      Wrap this void promise in a function and call it inside useEffect or as a
+      user event callback.
+      <br />
+      <a href="https://stackoverflow.com/a/53350139/11392807">Inspiration</a>
+      <br />
+      Of course, one can avoid this hassle by using the Axios HTTP library. It
+      takes in a max time limit.
+      <a href="https://stackoverflow.com/a/62082804/11392807">See</a>
+    </h2>
+  );
+}
 export default HTTPRequestWithTimeLimit;
