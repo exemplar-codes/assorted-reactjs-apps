@@ -1,8 +1,8 @@
 import React from "react";
-import HTTPRequestWithRef from "./HTTPRequestWithRef/HTTPRequestWithRef";
+import HTTPRequestWithTimeLimit from "./HTTPRequestWithTimeLimit/HTTPRequestWithTimeLimit";
 
 function CurrentApp() {
-  return <HTTPRequestWithRef />;
+  return <HTTPRequestWithTimeLimit />;
 }
 
 export default CurrentApp;
