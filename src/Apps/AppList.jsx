@@ -22,6 +22,7 @@ import MixedStateBatching from "./MixedStateBatching/MixedStateBatching";
 import UITreeEvalOrder from "./UITreeEvalOrder/UITreeEvalOrderMain";
 import UseMemoDemo from "./UseMemoDemo/UseMemoDemo";
 import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
+import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -61,6 +62,7 @@ const Apps = [
     Component: UseMemoDemo,
   },
   { componentName: "UseMemoWithChild", Component: UseMemoWithChild },
+  { componentName: "HTTPRequestsMain", Component: HTTPRequestsMain },
   // Add new app here
 ];
 

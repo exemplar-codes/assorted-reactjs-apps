@@ -1,8 +1,8 @@
 import React from "react";
-import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
+import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
 
 function CurrentApp() {
-  return <UseMemoWithChild />;
+  return <HTTPRequestsMain />;
 }
 
 export default CurrentApp;
