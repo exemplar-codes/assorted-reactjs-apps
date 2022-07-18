@@ -59,6 +59,7 @@ function HTTPRequestWithTimeLimit() {
       <p>{loading && "Loading...2 seconds left..."}</p>
       <p>
         {!loading && data && !requestTimeLimitExceeded && JSON.stringify(data)}
+        <hr />
       </p>
       {!loading && data && (
         <h2>
@@ -77,6 +78,7 @@ function HTTPRequestWithTimeLimit() {
           <br />
           Of course, one can avoid this hassle by using the Axios HTTP library.
           It takes in a max time limit.
+          <a href="https://stackoverflow.com/a/62082804/11392807">See</a>
         </h2>
       )}
     </>
