@@ -23,6 +23,7 @@ import UITreeEvalOrder from "./UITreeEvalOrder/UITreeEvalOrderMain";
 import UseMemoDemo from "./UseMemoDemo/UseMemoDemo";
 import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
 import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
+import HTTPRequestWithRef from "./HTTPRequestWithRef/HTTPRequestWithRef";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -63,6 +64,7 @@ const Apps = [
   },
   { componentName: "UseMemoWithChild", Component: UseMemoWithChild },
   { componentName: "HTTPRequestsMain", Component: HTTPRequestsMain },
+  { componentName: "HTTPRequestWithRef", Component: HTTPRequestWithRef },
   // Add new app here
 ];
 

@@ -1,8 +1,8 @@
 import React from "react";
-import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
+import HTTPRequestWithRef from "./HTTPRequestWithRef/HTTPRequestWithRef";
 
 function CurrentApp() {
-  return <HTTPRequestsMain />;
+  return <HTTPRequestWithRef />;
 }
 
 export default CurrentApp;
