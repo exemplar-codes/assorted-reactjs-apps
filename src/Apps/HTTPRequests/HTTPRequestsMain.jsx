@@ -7,10 +7,9 @@ function HTTPRequestsMain() {
   const [withUseEffect, setWithUseEffect] = useState(false);
   return (
     <>
-      <button onClick={() => setWithUseEffect((prev) => !prev)}>
-        {withUseEffect ? "Without" : "With"} useEffect
-      </button>
+      <button onClick={() => setWithUseEffect((prev) => !prev)}>Toggle</button>
       <hr />
+      <h2>{!withUseEffect ? "Without" : "With"} useEffect</h2>
       {withUseEffect ? <HTTPwUseEffect /> : <HTTPwoUseEffect />}
     </>
   );
