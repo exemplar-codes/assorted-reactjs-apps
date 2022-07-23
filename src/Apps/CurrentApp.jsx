@@ -1,8 +1,8 @@
 import React from "react";
-import HTTPRequestWithTimeLimit from "./HTTPRequestWithTimeLimit/HTTPRequestWithTimeLimit";
+import CustomHookDemoCounter from "./CustomHookDemoCounter/CustomHookDemoCounter";
 
 function CurrentApp() {
-  return <HTTPRequestWithTimeLimit />;
+  return <CustomHookDemoCounter />;
 }
 
 export default CurrentApp;
