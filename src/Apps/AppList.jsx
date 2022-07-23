@@ -25,6 +25,7 @@ import UseMemoWithChild from "./UseMemoWithChild/UseMemoWithChild";
 import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
 import HTTPRequestWithRef from "./HTTPRequestWithRef/HTTPRequestWithRef";
 import HTTPRequestWithTimeLimit from "./HTTPRequestWithTimeLimit/HTTPRequestWithTimeLimit";
+import CustomHookDemoCounter from "./CustomHookDemoCounter/CustomHookDemoCounter";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -69,6 +70,10 @@ const Apps = [
   {
     componentName: "HTTPRequestWithTimeLimit",
     Component: HTTPRequestWithTimeLimit,
+  },
+  {
+    componentName: "CustomHookDemoCounter",
+    Component: CustomHookDemoCounter,
   },
   // Add new app here
 ];
