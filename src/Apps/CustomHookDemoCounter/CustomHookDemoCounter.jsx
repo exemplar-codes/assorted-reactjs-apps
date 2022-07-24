@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useCounter from "./use-counter";
 
 function CustomHookDemoCounter() {
-  const [mode, setMode] = useState(true);
+  const [useDependency, setUseDependency] = useState(false);
 
   return (
     <>
-      <h1>{mode > 0 ? "Using Custom Hook" : "Using Higher Order Component"}</h1>
-      <button onClick={() => setMode((prevState) => !prevState)}>Toggle</button>
+      <h1>{!useDependency ? <em>Not&nbsp;</em> : ''}{'using callback in useEffect dependency'}</h1>
+      <button onClick={() => setUseDependency((prevState) => !prevState)}>Toggle</button>
       <br />
       <br />
-      {mode ? <MainWithHook /> : <MainHOC />}
+      <MainWithHook useDependency={useDependency}/>
       <h2>
-        Both counters have a common same logic - they keep updating their state
+        All counters have common logic - they keep updating their state
         every 1 second. But state update logic is different. Ignore the negative
         vs positive similarities, assume they are completely unrelated state
         changes.
@@ -25,48 +25,29 @@ function CustomHookDemoCounter() {
   );
 }
 
-function MainWithHook() {
+function MainWithHook({useDependency}) {
+  const countForward = useCounter((prevState) => prevState + 1, useDependency, "1");
+  const countBackward = useCounter((prevState) => prevState - 1, useDependency, "2");
+  const countForwardx = useCounter((prevState) => prevState + 1, useDependency, "3");
+  const countBackwardx = useCounter((prevState) => prevState - 1, useDependency, "4");
+  const countForwardy = useCounter((prevState) => prevState + 1, useDependency, "5");
+  const countBackwardy = useCounter((prevState) => prevState - 1, useDependency, "6");
+  const countForwardz = useCounter((prevState) => prevState + 1, useDependency, "7");
+  const countBackwardz = useCounter((prevState) => prevState - 1, useDependency, "8");
+
   return (
     <>
-      <ForwardWithHook />
+      <UIContent count={countForward} />
       <br />
-      <BackwardWithHook />
+      <UIContent count={countBackward} />
+      <br /> <UIContent count={countForwardx} />
+      <br /> <UIContent count={countBackwardx} />
+      <br /> <UIContent count={countForwardy} />
+      <br /> <UIContent count={countBackwardy} />
+      <br /> <UIContent count={countForwardz} />
+      <br /> <UIContent count={countBackwardz} />
     </>
   );
-}
-
-function ForwardWithHook() {
-  const countForward = useCounter((prevState) => prevState + 1);
-  return <UIContent count={countForward} />;
-}
-
-function BackwardWithHook() {
-  const countBackward = useCounter((prevState) => prevState - 1);
-  return <UIContent count={countBackward} />;
-}
-
-function MainHOC() {
-  return (
-    <>
-      <RefreshingButtonHOC stateMutationLogic={(prevState) => prevState + 1} />
-      <br />
-      <RefreshingButtonHOC stateMutationLogic={(prevState) => prevState - 1} />
-    </>
-  );
-}
-
-function RefreshingButtonHOC({ stateMutationLogic }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCount(stateMutationLogic);
-    }, 1000);
-
-    return () => window.clearTimeout(timer);
-  }, [count, stateMutationLogic]);
-
-  return <UIContent count={count} />;
 }
 
 function UIContent({ count }) {
