@@ -1,8 +1,8 @@
 import React from "react";
-import CustomHookDemoCounter from "./CustomHookDemoCounter/CustomHookDemoCounter";
+import DebouncedTextInput from "./DebouncedTextInput/DebouncedTextInput";
 
 function CurrentApp() {
-  return <CustomHookDemoCounter />;
+  return <DebouncedTextInput />;
 }
 
 export default CurrentApp;

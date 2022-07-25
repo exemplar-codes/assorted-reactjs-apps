@@ -26,6 +26,7 @@ import HTTPRequestsMain from "./HTTPRequests/HTTPRequestsMain";
 import HTTPRequestWithRef from "./HTTPRequestWithRef/HTTPRequestWithRef";
 import HTTPRequestWithTimeLimit from "./HTTPRequestWithTimeLimit/HTTPRequestWithTimeLimit";
 import CustomHookDemoCounter from "./CustomHookDemoCounter/CustomHookDemoCounter";
+import DebouncedTextInput from "./DebouncedTextInput/DebouncedTextInput";
 
 const Apps = [
   { componentName: "HelloWorld", Component: HelloWorld },
@@ -74,6 +75,10 @@ const Apps = [
   {
     componentName: "CustomHookDemoCounter",
     Component: CustomHookDemoCounter,
+  },
+  {
+    componentName: "DebouncedTextInput",
+    Component: DebouncedTextInput,
   },
   // Add new app here
 ];
