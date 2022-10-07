@@ -1,6 +1,5 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import AppsList from "./pages/AppsList";
-import Home from "./pages/Home";
 import InvalidLinkPage from "./pages/InvalidLink";
 import SpecificApp from "./pages/SpecificApp";
 

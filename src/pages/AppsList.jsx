@@ -4,6 +4,7 @@ import AppList from "../Apps/AppList";
 function AppsList() {
   return (
     <div>
+      <h1>Assorted React Apps</h1>
       <ol>
         {Object.keys(AppList).map((appName) => (
           <li key={appName}>
