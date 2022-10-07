@@ -5,8 +5,11 @@ import SpecificApp from "./pages/SpecificApp";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/assorted-reactjs-apps">
       <Switch>
+        <Route path="/" exact>
+          <Redirect to="/apps" />
+        </Route>
         <Route path="/apps/:appName">
           <SpecificApp />
         </Route>
