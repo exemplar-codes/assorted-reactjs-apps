@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import AppList from "./Apps/AppList";
-import CurrentApp from "./Apps/CurrentApp";
-
-const live = window.location.hostname !== "localhost";
+import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>{!live ? <CurrentApp /> : <AppList />}</React.StrictMode>,
+  <React.StrictMode>{<App />}</React.StrictMode>,
   document.getElementById("root")
 );
