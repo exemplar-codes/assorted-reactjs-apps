@@ -1,6 +1,7 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import AppsList from "./pages/AppsList";
 import Home from "./pages/Home";
+import InvalidLinkPage from "./pages/InvalidLink";
 import SpecificApp from "./pages/SpecificApp";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
           <AppsList />
         </Route>
         <Route path="*">
-          <Redirect to="/apps" />
+          <InvalidLinkPage />
         </Route>
       </Switch>
     </BrowserRouter>
