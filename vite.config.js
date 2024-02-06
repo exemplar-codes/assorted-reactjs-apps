@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import {
   getRepoDetails,
   setPackageJSONValuesForCurrentRepo,
-} from "./build_utils_/buildHelper_";
+} from "./build_utils/buildHelper";
 
 const { viteBaseName = "", repoName = "", ghURL = "" } = await getRepoDetails();
 
@@ -16,5 +16,5 @@ if (false && import.meta.env?.PROD) {
 export default defineConfig({
   plugins: [react()],
   base: `/${viteBaseName}/`,
-  assetsInclude: ["**/*.zip", "**/*.html"], // for zip and iframe assets
+  assetsInclude: ["**/*.zip"], // for zip and iframe assets
 });
