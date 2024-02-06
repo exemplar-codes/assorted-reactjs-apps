@@ -26,6 +26,7 @@ import HTTPRequestWithTimeLimit from "./HTTPRequestWithTimeLimit/HTTPRequestWith
 import CustomHookDemoCounter from "./CustomHookDemoCounter/CustomHookDemoCounter";
 import DebouncedTextInput from "./DebouncedTextInput/DebouncedTextInput";
 import VeryNewApp from "./VeryNewApp";
+import HelperNodes from "./HelperNodes";
 
 const AppList = {
   HelloWorld: HelloWorld,
@@ -56,6 +57,7 @@ const AppList = {
   CustomHookDemoCounter: CustomHookDemoCounter,
   DebouncedTextInput: DebouncedTextInput,
   VeryNewApp: VeryNewApp,
+  HelperNodes: HelperNodes,
 };
 
 export default AppList;
