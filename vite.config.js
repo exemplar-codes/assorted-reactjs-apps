@@ -1,8 +1,20 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import {
+  getRepoDetails,
+  setPackageJSONValuesForCurrentRepo,
+} from "./build_utils_/buildHelper_";
+
+const { viteBaseName = "", repoName = "", ghURL = "" } = await getRepoDetails();
+
+if (false && import.meta.env?.PROD) {
+  // this (env being PROD) is true during gh pages build, as seen in the message 'vite v4.4.5 building for production...'
+  await setPackageJSONValuesForCurrentRepo(repoName, ghURL); // set package.json homepage for gh pages
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/assorted-reactjs-apps",
   plugins: [react()],
+  base: `/${viteBaseName}/`,
+  assetsInclude: ["**/*.zip", "**/*.html"], // for zip and iframe assets
 });
