@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import AppsList from "./pages/AppsList";
 import InvalidLinkPage from "./pages/InvalidLink";
 import SpecificApp from "./pages/SpecificApp";
 
 function App() {
   return (
-    <BrowserRouter basename="">
+    <HashRouter basename="">
       <Routes>
         <Route path="/" element={<Navigate to="/apps" />} />
 
@@ -13,7 +13,7 @@ function App() {
         <Route path="/apps" element={<AppsList />} />
         <Route path="*" element={<InvalidLinkPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
